@@ -19,7 +19,10 @@ class MainHook : YukiHookAPI {
 
             // Fake Android ID
             injectMember {
-                method { name = "getString"; paramCount = 2 }
+                method { 
+                    name = "getString"
+                    paramCount = 2 
+                }
                 afterHook {
                     if (args[1] == Settings.Secure.ANDROID_ID) result = profile["android_id"]
                 }
@@ -44,13 +47,20 @@ class MainHook : YukiHookAPI {
 // Helper extension
 fun <T> com.highcapable.yukihookapi.hook.param.HookParam.replaceField(clazz: Class<*>, fieldName: String, value: String?) {
     injectMember {
-        field { name = fieldName; inClass = clazz }
+        field { 
+            name = fieldName
+            inClass = clazz 
+        }
         replaceTo(value)
     }
 }
+
 fun <T> com.highcapable.yukihookapi.hook.param.HookParam.replaceMethod(clazz: Class<*>, methodName: String, value: String?) {
     injectMember {
-        method { name = methodName; inClass = clazz }
+        method { 
+            name = methodName
+            inClass = clazz 
+        }
         replaceTo(value)
     }
 }
