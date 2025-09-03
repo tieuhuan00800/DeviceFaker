@@ -1,0 +1,33 @@
+name: Android CI
+
+on:
+  push:
+    branches: [ "main" ]  # Trigger workflow khi push lên nhánh main
+  pull_request:
+    branches: [ "main" ]  # Trigger workflow khi có pull request lên nhánh main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest  # Build trên hệ điều hành Ubuntu (Linux)
+
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v3  # Lấy mã nguồn từ repo
+
+      - name: Set up JDK 11
+        uses: actions/setup-java@v3
+        with:
+          java-version: '11'
+          distribution: 'temurin'  # Cài đặt OpenJDK 11 từ Adoptium
+
+      - name: Set up Android SDK
+        uses: android-actions/setup-android@v3  # Cài đặt Android SDK và các công cụ cần thiết
+
+      - name: Build with Gradle
+        run: ./gradlew assembleDebug  # Lệnh build APK trong thư mục project
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v3  # Upload APK để tải về sau
+        with:
+          name: app-debug
+          path: app/build/outputs/apk/debug/app-debug.apk
