@@ -30,7 +30,7 @@ jobs:
         run: ./gradlew assembleDebug  # Build APK
 
       - name: Upload APK
-        uses: actions/upload-artifact@v4.1  # Upload APK để tải về sau
+        uses: actions/upload-artifact@v4.0  # Upload APK để tải về sau
         with:
           name: app-debug
           path: app/build/outputs/apk/debug/app-debug.apk  # Đường dẫn tới APK
