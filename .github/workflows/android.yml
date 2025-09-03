@@ -26,8 +26,8 @@ jobs:
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew  # Cấp quyền thực thi cho gradlew
 
-      - name: Build with Gradle
-        run: ./gradlew assembleDebug  # Build APK
+      - name: Build with Gradle (with stacktrace)
+        run: ./gradlew assembleDebug --stacktrace  # Thêm --stacktrace để lấy thông tin lỗi chi tiết
 
       - name: Upload APK
         uses: actions/upload-artifact@v4  # Upload APK để tải về sau
