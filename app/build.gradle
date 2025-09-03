@@ -30,7 +30,6 @@ android {
         jvmTarget = "11"
     }
 
-    // Không cần phải cấu hình AAPT2 nữa, vì AAPT2 luôn được bật
     buildFeatures {
         aidl = false
         renderScript = false
