@@ -1,0 +1,48 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'com.google.devtools.ksp' version '1.9.23-1.0.20'
+}
+
+android {
+    namespace "com.devicefaker"
+    compileSdk 33   // AGP 7.4.2 chỉ hỗ trợ tới 33
+
+    defaultConfig {
+        applicationId "com.devicefaker"
+        minSdk 24
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+    kotlinOptions {
+        jvmTarget = "11"
+    }
+
+    // ✅ Fix lỗi AAPT2 trong Termux
+    aaptOptions {
+        useNewCruncher false
+    }
+    buildFeatures {
+        aidl = false
+        renderScript = false
+        shaders = false
+    }
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:1.9.23"
+    implementation "com.highcapable.yukihookapi:api:1.1.1"
+    ksp "com.highcapable.yukihookapi:ksp-xposed:1.1.1"
+}
