@@ -1,7 +1,0 @@
-com.devicefaker.app-pngs-0 /data/data/com.termux/files/home/DeviceFaker/app/build/generated/res/pngs/debug
-com.devicefaker.app-resValues-1 /data/data/com.termux/files/home/DeviceFaker/app/build/generated/res/resValues/debug
-com.devicefaker.app-mergeDebugResources-2 /data/data/com.termux/files/home/DeviceFaker/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir
-com.devicefaker.app-mergeDebugResources-3 /data/data/com.termux/files/home/DeviceFaker/app/build/intermediates/incremental/debug/mergeDebugResources/stripped.dir
-com.devicefaker.app-merged_res-4 /data/data/com.termux/files/home/DeviceFaker/app/build/intermediates/merged_res/debug
-com.devicefaker.app-debug-5 /data/data/com.termux/files/home/DeviceFaker/app/src/debug/res
-com.devicefaker.app-main-6 /data/data/com.termux/files/home/DeviceFaker/app/src/main/res

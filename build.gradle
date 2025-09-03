@@ -4,14 +4,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath "com.android.tools.build:gradle:7.4.2"
+        classpath "com.android.tools.build:gradle:7.4.2"  // Kiểm tra xem có cần nâng cấp lên phiên bản mới hơn không
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.23"
-    }
-}
-
-allprojects {
-    repositories {
-        google()
-        mavenCentral()
     }
 }
