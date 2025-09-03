@@ -18,6 +18,7 @@ jobs:
         uses: actions/setup-java@v3
         with:
           java-version: '17'  # Cài đặt OpenJDK 17
+          distribution: 'temurin'  # Chỉ định dùng AdoptOpenJDK (temurin)
 
       - name: Set up Android SDK
         uses: android-actions/setup-android@v3  # Cài đặt Android SDK và các công cụ cần thiết
